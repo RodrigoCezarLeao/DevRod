@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>    
+    <title>JavaScript - setInterval</title>
+    <style>
+        body{margin: 0 auto; display: flex; flex-direction: column; align-items: center; justify-content: center;}
+        p, button, span {font-size: 2em;}
+        p {margin: 0px;}
+        button {margin: 20px;}
+    </style>
+    <script src="script.js"></script>
+</head>
+<body>
+    <h1>JavaScript - setInterval | clearInterval</h1>
+
+    <span>Clock 1</span>
+    <p id="clock1">05:00</p>
+
+    <button onclick="chessClock()">Button</button>
+    <!-- <button onclick="pauseClock2()">Pause</button> -->
+
+    <p id="clock2">05:00</p>
+    <span>Clock 2</span>
+    
+    <script>
+        var intervalClock;        
+        var turnClock = "clock1";
+
+        function startClock(clockId){
+            intervalClock = window.setInterval(updateClock, 1000, turnClock);
+        }
+
+        function pauseClock(){
+            window.clearInterval(intervalClock);
+        }
+
+        function chessClock(){
+            if (turnClock === "clock1"){
+                pauseClock();
+                startClock(turnClock);
+                turnClock = "clock2";
+            }
+            else if (turnClock === "clock2"){
+                pauseClock();
+                startClock(turnClock);
+                turnClock = "clock1";
+            }
+        }
+
+    </script>
+
+    <script>
+        // var intervalClock1;
+        // var intervalClock2;
+        // var turnClock = "clock1";
+
+        // function updateClock1() {
+        //     updateClock("clock1");
+        // }
+
+        // function startClock1(){
+        //     intervalClock1 = window.setInterval(updateClock, 1000, 'clock1');
+        // }
+
+        // function pauseClock1(){
+        //     window.clearInterval(intervalClock1);
+        // }
+        
+        // function startClock2(){
+        //     intervalClock2 = window.setInterval(updateClock, 1000, 'clock2');
+        // }
+        
+        // function pauseClock2(){
+        //     window.clearInterval(intervalClock2);
+        // }
+
+        // function chessClock(){
+        //     if (turnClock === "clock1"){
+        //         pauseClock2();
+        //         startClock1();
+        //         turnClock = "clock2";
+        //     }
+        //     else if (turnClock === "clock2"){
+        //         pauseClock1();
+        //         startClock2();
+        //         turnClock = "clock1";
+        //     }
+        // }
+
+    </script>
+</body>
+</html>
