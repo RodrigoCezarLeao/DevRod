@@ -35,57 +35,16 @@
         }
 
         function chessClock(){
+            pauseClock();
             if (turnClock === "clock1"){
-                pauseClock();
                 startClock(turnClock);
                 turnClock = "clock2";
             }
-            else if (turnClock === "clock2"){
-                pauseClock();
+            else if (turnClock === "clock2"){                
                 startClock(turnClock);
                 turnClock = "clock1";
             }
         }
-
-    </script>
-
-    <script>
-        // var intervalClock1;
-        // var intervalClock2;
-        // var turnClock = "clock1";
-
-        // function updateClock1() {
-        //     updateClock("clock1");
-        // }
-
-        // function startClock1(){
-        //     intervalClock1 = window.setInterval(updateClock, 1000, 'clock1');
-        // }
-
-        // function pauseClock1(){
-        //     window.clearInterval(intervalClock1);
-        // }
-        
-        // function startClock2(){
-        //     intervalClock2 = window.setInterval(updateClock, 1000, 'clock2');
-        // }
-        
-        // function pauseClock2(){
-        //     window.clearInterval(intervalClock2);
-        // }
-
-        // function chessClock(){
-        //     if (turnClock === "clock1"){
-        //         pauseClock2();
-        //         startClock1();
-        //         turnClock = "clock2";
-        //     }
-        //     else if (turnClock === "clock2"){
-        //         pauseClock1();
-        //         startClock2();
-        //         turnClock = "clock1";
-        //     }
-        // }
 
     </script>
 </body>
