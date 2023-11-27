@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript - localStorage</title>
+    <script src="script.js"></script>
+    <style>
+        form{display: flex; flex-direction: column; gap: 10px;}
+        form button { width: 100px;}
+        table, tr, td, th {border: 1px solid black; padding: 5px; text-align: center;}
+        i {cursor: pointer;}
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <h1>JavaScript - LocalStorage</h1>
+    <hr/>
+    <form >
+        <label>Product <input id="input-product" /></label>
+        <label>Value <input id="input-value" type="number"/></label>
+        <label>Amount <input id="input-amount" type="number"/></label>
+        <button type="button" onclick="insertProduct()">Insert</button>
+    </form>
+
+    <hr/>
+
+    <table id="items">
+        <tr>
+            <th>Product</th>
+            <th>Value</th>
+            <th>Amount</th>
+            <th>Total Value</th>
+            <th>Delete</th>
+        </tr>        
+    </table>
+
+    <script>
+        function insertProduct(){    
+            var idx = new Date().toJSON();
+            let data = getFormData();
+            window.localStorage.setItem(`shop-${idx}`, data);            
+            updateTable();
+        }
+
+        function deleteProduct(key){
+            window.localStorage.removeItem(key);
+            updateTable();
+        }
+
+        updateTable();
+    </script>
+
+    <!-- LocalStorage
+        - armazenamento local
+        - dado não expira
+        - se limpar os dados do navegador ele é deletado
+        - exclusivo por domínio de aplicação
+        - chave - valor
+        - localStorage.setItem()
+        - localStorage.getItem()
+        - localStorage.removeItem()
+        - localStorage.clear()
+        - localStorage.length
+        - localStora.key(number)
+    -->
+</body>
+</html>
